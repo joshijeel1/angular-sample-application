@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userData">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>
+            <button type="button" class="btn btn-link" (click)="editUser(user.id)">Edit</button>
+            <button type="button" class="btn btn-link" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="createUser()">Create</button>
